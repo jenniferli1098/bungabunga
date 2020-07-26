@@ -24,10 +24,10 @@ const BungaBungaClient = Client({
   //   window.__REDUX_DEVTOOLS_EXTENSION__
   //   && window.__REDUX_DEVTOOLS_EXTENSION__()
   // ),
-  enhancer: compose(
-    applyMiddleware(logger),
-    (window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-  ),
+  // enhancer: compose(
+  //   applyMiddleware(logger),
+  //   (window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+  // ),
 
 });
 
