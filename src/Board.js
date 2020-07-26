@@ -34,7 +34,7 @@ class BungaBungaBoard extends React.Component {
 
   //this detemines if the card is clickable
   clickable(playerID) {
-    console.log(this.props.G.bungaBtn.pressedBy + " "+ playerID);
+    //console.log(this.props.G.bungaBtn.pressedBy + " "+ playerID);
     if(this.props.G.bungaBtn.pressedBy === '' + playerID) {return true;}
     var clickable = true;
     //not the player's cards
@@ -72,6 +72,7 @@ class BungaBungaBoard extends React.Component {
         //this.props.G.card1 ={playerId,key};
         this.props.G.card1.playerId = playerId;
         this.props.G.card1.key = key;
+        console.log(this.props.G.card1);
         this.props.moves.SetEvent('swap2');
         //this.props.G.event = 'swap2';
         break;
@@ -89,13 +90,11 @@ class BungaBungaBoard extends React.Component {
         alert('spy');
         this.props.G.peekCard.playerId = playerId;
         this.props.G.peekCard.key = key;
-        console.log(this.props.G.peekCard.playerId);
+        console.log(this.props.G.peekCard);
         this.props.moves.FaceUp();
         setTimeout(() => {
           this.props.moves.FaceDown();
-          this.props.moves.EndTurn();
         }, 1000);
-
         //show cards;
         break;
       case 'peek':
@@ -106,17 +105,17 @@ class BungaBungaBoard extends React.Component {
         setTimeout(() => {
           this.props.moves.FaceDown();
         }, 1000);
-        this.props.moves.EndTurn();
         break;
 
       case 'lookswap':
         alert('lookswap');
         this.props.G.peekCard.playerId = playerId;
         this.props.G.peekCard.key = key;
-        console.log(this.props.G.peekCard.playerId);
+        console.log(this.props.G.peekCard);
         this.props.moves.FaceUp();
         setTimeout(() => {
           this.props.moves.FaceDown();
+          this.props.moves.EndTurn();
         }, 1000);
 
 

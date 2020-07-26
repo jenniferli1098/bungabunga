@@ -23,7 +23,7 @@ const Bunga = {
   },
 
   turn: {
-    movelimit: 1,
+    movelimit: 5,
     onEnd: (G, ctx) => {
       if (G.deck.length === 0) {
         G.deck = G.discarded;
@@ -261,6 +261,8 @@ function FaceDown(G, ctx) {
   G.cardValue[G.peekCard.playerId][G.peekCard.key].faceUp = false;
 
   G.peekCard = {};
+  //EndTurn(G,ctx);
+  
 
 }
 
